@@ -6,6 +6,8 @@
 - [ ] #4 Wstęp ma zły format - powinien bardziej się skupiać na powiazanych pracach, lukach, motywacji, celach i wkładzie, a mniej na opisach owoców (to do sekcji 3)
 - [ ] #4 Podkreślić nowotorski charakter pracy (rozwój zbioru danych, ocena sprzętu i metodologia wraz z porównaniem do innych prac)
 - [ ] #4 Opis topologii jest niespójny. W 5.1. opisywany jest jako liniowy a na rys. 6 i dyskusja dotycząca braku łańcucha czterokubitowego sugerują coś innego
+- [ ] #4 Uporządkować i ujednolicić strukturę, zbierając rozproszone informacje metodyczne (obecnie w sekcjach 4 i 5.2). Zastosować nowy, wyraźny podział na sekcje: Dataset Description, Methodology, Experimental Setup, Results, Discussion/Limitations oraz Conclusion.
+- [ ] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
 - [ ] #3 Dodać krótkie oświadczenie dotyczące praw własności i etyki wykorzystania certyfikowanego materiału roślinnego. - z tego co wyczytałem to trzeba opisać w ramach oświadczenia/sekcji "Ethics Statement": 
 - źródło pochodzenia 
 - zgoda na badania
@@ -29,6 +31,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana.
 - [ ] #4 Dodać 5 - cechowy zbiór danych - bo jest uwzględniony w opisach - lub napisać czemu nie został uwzględniony
+- [ ] #4  Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
 
 ### Metodologia i Klasyczne Modele Bazowe (Baseline)
 - [ ] #1 4 Dodać klasyczne modele uczenia maszynowego (np. SVM, Random Forest, K-NN) dla porównania i sugestia by dodać jeszcze jedną metodę kwantową (ja bym dodał jedynie nowy ansatz, QSVM będzie znacznie lepszy więc bez sensu)
