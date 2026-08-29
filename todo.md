@@ -28,7 +28,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] #2 Opisać ryzyko związane z małą liczbą próbek 
 - [ ] Zrobić testy statystyczne potwierdzające trudność zbioru oraz separowalność klas.
 - [ ] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed" ? 
-- [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
+- [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana.
 - [ ] #4 Dodać 5 - cechowy zbiór danych - bo jest uwzględniony w opisach - lub napisać czemu nie został uwzględniony
 - [ ] #4  Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
@@ -48,7 +48,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - jałowych płaskowyży
 - metod redukcji szumów
 - podejść hybrydowych
-- porównać się z metodami hybrydowymi
+- porównać się z metodami hybrydowymi
 - [ ] #2 Wzmocnić motywacje - dlaczego sensowne jest podejście kwantowe w tym konkretnym zadaniu w porównaniu z klasykami - sugestia odwołania się do doi: 10.1007/s43674-023-00054-2; 10.1080/03610918.2024.2330700
 - Jezeli ktoś coś wymyśli to dodac jak nie to odbić
 
