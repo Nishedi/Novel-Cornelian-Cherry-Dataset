@@ -10,13 +10,13 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-def load_and_preprocess_data(file_path, feature_cols, label_col='label', scaler_type='minmax'):
+def load_and_preprocess_data(file_path, feature_cols, label_col='label', scaler_type='minmax', labels=[0, 1, 2, 3, 4]):
     try:
         df = pd.read_csv(file_path, skiprows=1)
     except Exception as e:
         print(f"Błąd podczas wczytywania pliku: {e}")
         return None, None
-
+    df = df[df[label_col].isin(labels)]
     X_raw = df[feature_cols].values
     y = df[label_col].values
 
@@ -37,7 +37,7 @@ def evaluate_classical_models(X, y, n_splits=5, random_state=42, output_file=Non
 
     models = {
         "SVM": SVC(kernel='rbf', random_state=random_state),
-        "Random_forest": RandomForestClassifier(n_estimators=100, random_state=random_state),
+        "Random-forest": RandomForestClassifier(n_estimators=100, random_state=random_state),
         "K-NN": KNeighborsClassifier(n_neighbors=5),
         "CNN(MLP)": MLPClassifier(hidden_layer_sizes=(10, 10), max_iter=500, random_state=random_state)
     }
@@ -46,7 +46,6 @@ def evaluate_classical_models(X, y, n_splits=5, random_state=42, output_file=Non
 
     print(f"{n_splits}-Fold CV, Seed: {random_state})")
     print(f"{'Model':<20} | {'Accuracy':<10} | {'Macro-F1':<10} | {'Macro-Prec':<10} | {'Macro-Recall':<12}")
-    print("-" * 75)
 
     results = {}
     for name, model in models.items():
@@ -87,16 +86,41 @@ def calculate_average_metrics(csv_file_path):
     avg_metrics = avg_metrics.sort_values(by='Accuracy', ascending=False)
 
     return avg_metrics
+def create_latex_table(results, output_file='results/classical_baselines_results_avg.tex', caption="M", label="tab:M"):
+    with open(output_file, 'w') as f:
+        f.write("\\begin{table*}[h!]\n")
+        f.write("\\centering\n")
+        f.write("\\caption{")
+        f.write(caption)
+        f.write("}\n")
+
+        f.write("\\begin{tabular}{lcccc}\n")
+        f.write("\\toprule\n")
+        f.write("\\textbf{Model} & \\textbf{Accuracy} & \\textbf{Macro-F1} & \\textbf{Macro-Prec} & \\textbf{Macro-Recall} \\\\\n")
+        f.write("\\midrule\n")
+        for model, metrics in results.iterrows():
+            
+            f.write(f"{model}&{metrics['Accuracy']}&{metrics['Macro-F1']}&{metrics['Macro-Prec']}&{metrics['Macro-Recall']}\\\\ \n")
+    
+        f.write("\\bottomrule\n")
+        f.write("\\end{tabular}\n")
+
+        f.write("\\label{")
+        f.write(label)
+        f.write("}\n")
+        f.write("\\end{table*}\n")
 
 if __name__ == "__main__":
     file_path_5_features = 'datasets/cornus_five_features.csv'
     features_5 = ['seed_mass', 'fruit_circ', 'seed_circ', 'fruit_len', 'seed_len']
+    features_4 = ['seed_mass', 'fruit_circ', 'fruit_len', 'seed_len']
+    features_3 = ['fruit_circ', 'fruit_len', 'seed_len']
     output_file = 'results/classical_baselines_results.csv'
     if output_file:
         with open(output_file, 'w') as f:
             f.write("Model,Accuracy,Macro-F1,Macro-Prec,Macro-Recall\n")
 
-    X_5, y_5 = load_and_preprocess_data(file_path_5_features, feature_cols=features_5, scaler_type='minmax')
+    X_5, y_5 = load_and_preprocess_data(file_path_5_features, feature_cols=features_5, scaler_type='minmax', labels=[3, 4])
 
     if X_5 is not None:
 
@@ -106,8 +130,9 @@ if __name__ == "__main__":
 
         for seed in seeds:
             evaluate_classical_models(X_5, y_5, n_splits=5, random_state=seed, output_file=output_file)
-        # if output_file:
-        #     with open(output_file, 'a') as f:
-        #         f.write(",,,,")
 
-    print(calculate_average_metrics(output_file))
+
+    results = calculate_average_metrics(output_file)
+    create_latex_table(results, output_file='results/classical_baselines_results_avg_3vs4_5_features.tex')
+
+
