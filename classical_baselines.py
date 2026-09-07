@@ -6,6 +6,7 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import load_iris
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -27,7 +28,27 @@ def load_and_preprocess_data(file_path, feature_cols, label_col='label', scaler_
     else:
         raise ValueError("Nieznany typ skalera. Wybierz 'minmax' lub 'standard'.")
 
+
+
     X_scaled = scaler.fit_transform(X_raw)
+
+    return X_scaled, y
+
+def load_and_preprocess_iris_data(label_col='species', scaler_type='minmax'):
+    df = load_iris()
+
+    X_raw = df.data
+    y = df.target
+
+
+    if scaler_type == 'minmax':
+        scaler = MinMaxScaler()
+    elif scaler_type == 'standard':
+        scaler = StandardScaler()
+    else:
+        raise ValueError("Nieznany typ skalera. Wybierz 'minmax' lub 'standard'.")
+
+    X_scaled = scaler.fit_transform(df.data)
 
     return X_scaled, y
 
@@ -121,6 +142,7 @@ if __name__ == "__main__":
             f.write("Model,Accuracy,Macro-F1,Macro-Prec,Macro-Recall\n")
 
     X_5, y_5 = load_and_preprocess_data(file_path_5_features, feature_cols=features_5, scaler_type='minmax', labels=[3, 4])
+    X_5, y_5 = load_and_preprocess_iris_data()
 
     if X_5 is not None:
 

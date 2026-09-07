@@ -50,26 +50,23 @@ for s in species:
     else:
         print(f"Could not filter dataset for species {s}.")
 
-print("\n--- TEST NORMALNOŚCI SHAPIRO-WILKA ---")
+print("\nSHAPIRO-WILK")
 for s in species:
     filtered_data = filter_dataset_by_species(dataset, s)
     if filtered_data is not None:
         print(f"\nKultywar: {species_name[s]}")
         for feature in features_to_analyze:
-            # Dropna zabezpiecza przed ewentualnymi brakami danych
             data_to_test = filtered_data[feature].dropna()
             stat, p_val = stats.shapiro(data_to_test)
             print(f"  {feature}: stat={stat:.4f}, p-value={p_val:.4f}")
 
-print("\n--- JEDNOCZYNNIKOWA ANOVA DLA POJEDYNCZYCH CECH ---")
-# H0: Średnie dla danej cechy są równe we wszystkich klasach (p < 0.05 oznacza istotne różnice)
+print("\nANOVA")
 for feature in features_to_analyze:
-    # Zbieramy dane dla danej cechy z podziałem na wszystkie 5 klas
     groups = [filter_dataset_by_species(dataset, s)[feature].dropna() for s in species]
     stat, p_val = stats.f_oneway(*groups)
     print(f"{feature}: F-stat = {stat:.4f}, p-value = {p_val:.4e}")
 
-print("\n--- TEST MANOVA (WIELOCZYNNIKOWA ANALIZA WARIANCJI) ---")
+print("\nMANOVA")
 if dataset is not None:
     formula = 'seed_mass + fruit_circ + seed_circ + fruit_len + seed_len ~ C(label)'
     try:
@@ -79,7 +76,6 @@ if dataset is not None:
         print(f"Błąd podczas wykonywania MANOVA: {e}")
 
 if dataset is not None:
-    print("\n--- GENEROWANIE WIZUALIZACJI ---")
 
     plt.figure(figsize=(8, 6))
     corr_matrix = dataset[features_to_analyze].corr()
