@@ -31,8 +31,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [ ] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed" ? 
 - [ ] [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana.
-- [ ] [ ] #4 Dodać 5 - cechowy zbiór danych - bo jest uwzględniony w opisach - lub napisać czemu nie został uwzględniony
-- [ ] [ ] #4  Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
+- [ ] [ ] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
 
 ### Metodologia i Klasyczne Modele Bazowe (Baseline)
 - [ ] [ ] #3 4 Uzupełnić tekst o podział (treningowy, walidacyjny, testowy) i ogólnie opisać współczynnik podziału czy walidacji krzyżowej - tu bym napisał, że jest jak w przypadku ewaluacji metod klasycznych sec:3
@@ -43,6 +42,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [ ] #4 *The multiclass classification mechanism is not sufficiently explained. Cornus is a five-class problem and Iris is a three-class problem, yet the mapping between quantum measurement outputs and class labels is not described. The keyword "binary classification" is also inconsistent with the reported experiments.*?
 - [ ] [ ] #4 Opisać dokładniej wstępne przetwarzanie danych (metody normalizacji, zakres skalowania)
 - [ ] [ ] #4 Doprecyzować opis "fully quantum" - zarzut, że to klasyk - optymalizacja na klasyku i wstępne przetwarzanie
+- [ ] [ ] #4 Dodać 5 - cechowy zbiór danych - bo jest uwzględniony w opisach - lub napisać czemu nie został uwzględniony
 - [ ] [ ] #4 Brak podstawowych informacji o rzeczywistym układzie (liczba shotów, powtórzeń, mapowanie kubitów, ustawienia transpilacji, głębokość obwodu?(to chyba było analizowane), liczba bramek dwukubitowych, liczba operacji SWAP, informacje o kalibracji, opis procedur minimalizacji błędów).
 
 ### Przegląd literatury
