@@ -5,6 +5,7 @@
 - [ ] [ ] #4 Dodać sekcję "Data Availability" przed bibliografią, w której będzie link/DOI do repozytorium.
 - [ ] [ ] #4 Wstęp ma zły format - powinien bardziej się skupiać na powiazanych pracach, lukach, motywacji, celach i wkładzie, a mniej na opisach owoców (to do sekcji 3)
 - [ ] [ ] #4 Podkreślić nowotorski charakter pracy (rozwój zbioru danych, ocena sprzętu i metodologia wraz z porównaniem do innych prac)
+- [ ] [ ] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
 - [ ] [ ] #4 Opis topologii jest niespójny. W 5.1. opisywany jest jako liniowy a na rys. 6 i dyskusja dotycząca braku łańcucha czterokubitowego sugerują coś innego
 - [ ] [ ] #4 Uporządkować i ujednolicić strukturę, zbierając rozproszone informacje metodyczne (obecnie w sekcjach 4 i 5.2). Zastosować nowy, wyraźny podział na sekcje: Introduction, Literature Review, Dataset Description, Methodology, Experimental Setup, Results, Discussion/Limitations oraz Conclusion.
 - [ ] [ ] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
@@ -24,18 +25,18 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [X] #3 4 Uzupełnić tekst o liczbę próbek dla każdej z klas i podziałów (treningowy, walidacyjny, testowy) i ogólnie opisać współczynnik podziału czy walidacji krzyżowej.
 - [ ] [X] #1 2 Dodać szczegółowe statystyki opisowe dla cech i odmian: średnie, odchylenia standardowe, macierze separowalności, wizualizacja granic decyzyjnych, formalne testy normalności rozkładu i separowalności (np. ANOVA lub MANOVA).
 - [ ] [ ] #2 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)
-- [ ] [ ] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
-- [ ] [ ] #2 Opisać ryzyko związane z małą liczbą próbek 
+- [ ] [X] #2 Opisać ryzyko związane z małą liczbą próbek 
 - [ ] [X] #4 Opisać dokładniej wstępne przetwarzanie danych (metody normalizacji, zakres skalowania)
+- [ ] [X] #R Rozbudować opis zbioru na dwie sekcje 1) Opis zbioru z motywacją (to co kazali z intro przenieśc) 2) analiza statystyczna i porównanie wyników na klasykach i irysach
 - [ ] [X] Zrobić testy statystyczne potwierdzające trudność zbioru oraz separowalność klas.
 - [ ] [ ] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed" ? 
 - [ ] [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana.
 - [ ] [ ] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
+- [ ] [X] #2 Usunąć stałe ziarno losowości, przeprowadzić testy i uśrednić wyniki, aby udowodnić stabilność modelu. (nie usuwać ziarna tylko przeprowadzić testy dla różnych ziaren)
 
 ### Metodologia i Klasyczne Modele Bazowe (Baseline)
 - [ ] [ ] #3 4 Uzupełnić tekst o podział (treningowy, walidacyjny, testowy) i ogólnie opisać współczynnik podziału czy walidacji krzyżowej - tu bym napisał, że jest jak w przypadku ewaluacji metod klasycznych sec:3
-- [ ] [ ] #R Rozbudować opis zbioru na dwie sekcje 1) Opis zbioru z motywacją (to co kazali z intro przenieśc) 2) analiza statystyczna i porównanie wyników na klasykach i irysach
 - [ ] [ ] #1 4 Dodać klasyczne modele uczenia maszynowego (np. SVM, Random Forest, K-NN) dla porównania i sugestia by dodać jeszcze jedną metodę kwantową (ja bym dodał jedynie nowy ansatz, QSVM będzie znacznie lepszy więc bez sensu) - to w opisie zbioru, tam umieścić i przedstawic, że jest trudniejszy od Iris (porównanie IRIS vs derenie).
 - [ ] [ ] #2 4 Dodać informację o hiperparametrach uczenia: wielkość batcha, learning rate, liczbę epok, funkcję straty i metodę optymalizacji - z naciskiem na implementowany optymalizator dla łatwiejszej replikacji.
 - [ ] [ ] #2 Usunąć stałe ziarno losowości, przeprowadzić testy i uśrednić wyniki, aby udowodnić stabilność modelu. (nie usuwać ziarna tylko przeprowadzić testy dla różnych ziaren)
@@ -46,12 +47,12 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [ ] #4 Brak podstawowych informacji o rzeczywistym układzie (liczba shotów, powtórzeń, mapowanie kubitów, ustawienia transpilacji, głębokość obwodu?(to chyba było analizowane), liczba bramek dwukubitowych, liczba operacji SWAP, informacje o kalibracji, opis procedur minimalizacji błędów).
 
 ### Przegląd literatury
-- [ ] [ ] #2 Poszerzyć o dyskusje nt:
-- jałowych płaskowyży
-- metod redukcji szumów
-- podejść hybrydowych
-- porównać się z metodami hybrydowymi
-- [ ] [ ] #2 Wzmocnić motywacje - dlaczego sensowne jest podejście kwantowe w tym konkretnym zadaniu w porównaniu z klasykami - sugestia odwołania się do doi: 10.1007/s43674-023-00054-2; 10.1080/03610918.2024.2330700
+- [ ] [X] #2 Poszerzyć o dyskusje nt: 
+- [ ] [X] jałowych płaskowyży
+- [ ] [X] metod redukcji szumów
+- [ ] [X] podejść hybrydowych
+- [ ] [X]porównać się z metodami hybrydowymi
+- [ ] [X] #2 Wzmocnić motywacje - dlaczego sensowne jest podejście kwantowe w tym konkretnym zadaniu w porównaniu z klasykami - sugestia odwołania się do doi: 10.1007/s43674-023-00054-2; 10.1080/03610918.2024.2330700
 - Jezeli ktoś coś wymyśli to dodac jak nie to odbić
 
 *in this regard, Enhance connections to recent literature that demonstrates the great potential and use of neural network (doi: 10.1007/s43674-023-00054-2; 10.1080/03610918.2024.2330700) for modelling complicated (nonlinear) patterns across a broad variety of study subjects in order to further motivate the exploration of neural network models in your present work, since situating the quantum neural network within the broader neural network paradigm would help readers appreciate both the continuity and the departure that QNNs represent relative to classical architectures.*
