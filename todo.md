@@ -3,12 +3,12 @@
 ### Kod, Dane i Wymogi Formalne
 - [ ] [ ] #4 Utworzyć publiczne, posprzątane repozytorium z kodem i zbiorem danych
 - [ ] [ ] #4 Dodać sekcję "Data Availability" przed bibliografią, w której będzie link/DOI do repozytorium.
-- [ ] [ ] #4 Wstęp ma zły format - powinien bardziej się skupiać na powiazanych pracach, lukach, motywacji, celach i wkładzie, a mniej na opisach owoców (to do sekcji 3)
-- [ ] [ ] #4 Podkreślić nowotorski charakter pracy (rozwój zbioru danych, ocena sprzętu i metodologia wraz z porównaniem do innych prac)
-- [ ] [ ] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
+- [ ] [X] #4 Wstęp ma zły format - powinien bardziej się skupiać na powiazanych pracach, lukach, motywacji, celach i wkładzie, a mniej na opisach owoców (to do sekcji 3)
+- [ ] [X] #4 Podkreślić nowotorski charakter pracy (rozwój zbioru danych, ocena sprzętu i metodologia wraz z porównaniem do innych prac)
+- [ ] [X] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
 - [ ] [ ] #4 Opis topologii jest niespójny. W 5.1. opisywany jest jako liniowy a na rys. 6 i dyskusja dotycząca braku łańcucha czterokubitowego sugerują coś innego
 - [ ] [ ] #4 Uporządkować i ujednolicić strukturę, zbierając rozproszone informacje metodyczne (obecnie w sekcjach 4 i 5.2). Zastosować nowy, wyraźny podział na sekcje: Introduction, Literature Review, Dataset Description, Methodology, Experimental Setup, Results, Discussion/Limitations oraz Conclusion.
-- [ ] [ ] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
+- [ ] [X] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
 - [ ] [ ] #3 Dodać krótkie oświadczenie dotyczące praw własności i etyki wykorzystania certyfikowanego materiału roślinnego. - z tego co wyczytałem to trzeba opisać w ramach oświadczenia/sekcji "Ethics Statement": 
 - źródło pochodzenia 
 - zgoda na badania
