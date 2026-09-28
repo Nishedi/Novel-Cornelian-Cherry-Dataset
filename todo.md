@@ -24,15 +24,15 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 ### Analiza Zbioru Danych i Statystyki
 - [ ] [X] #3 4 Uzupełnić tekst o liczbę próbek dla każdej z klas i podziałów (treningowy, walidacyjny, testowy) i ogólnie opisać współczynnik podziału czy walidacji krzyżowej.
 - [ ] [X] #1 2 Dodać szczegółowe statystyki opisowe dla cech i odmian: średnie, odchylenia standardowe, macierze separowalności, wizualizacja granic decyzyjnych, formalne testy normalności rozkładu i separowalności (np. ANOVA lub MANOVA).
-- [ ] [ ] #2 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)
+- [ ] [X] #2 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)
 - [ ] [X] #2 Opisać ryzyko związane z małą liczbą próbek 
 - [ ] [X] #4 Opisać dokładniej wstępne przetwarzanie danych (metody normalizacji, zakres skalowania)
 - [ ] [X] #R Rozbudować opis zbioru na dwie sekcje 1) Opis zbioru z motywacją (to co kazali z intro przenieśc) 2) analiza statystyczna i porównanie wyników na klasykach i irysach
 - [ ] [X] Zrobić testy statystyczne potwierdzające trudność zbioru oraz separowalność klas.
-- [ ] [ ] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed" ? 
-- [ ] [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
+- [ ] [X] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed" ? 
+- [ ] [X] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana.
-- [ ] [ ] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
+- [ ] [X] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
 - [ ] [X] #2 Usunąć stałe ziarno losowości, przeprowadzić testy i uśrednić wyniki, aby udowodnić stabilność modelu. (nie usuwać ziarna tylko przeprowadzić testy dla różnych ziaren)
 
 ### Metodologia i Klasyczne Modele Bazowe (Baseline)
@@ -79,14 +79,14 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [ ] Konsultacje części przyrodniczych i dodatkowe informacje - Mateusz
 
 **Prośba o dodatkowe informacje**
-- [ ] [ ] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
+- [ ] [X] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
 - [ ] [ ] #4 Przejrzeć i poprawić *"ethic statement"*
-- [ ] [ ] #4 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)]
-- [ ] [ ] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
-- [ ] [ ] #2 Opisać ryzyko związane z małą liczbą próbek
-- [ ] [ ] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed"
-- [ ] [ ] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
+- [ ] [X] #4 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)]
+- [ ] [X] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
+- [ ] [X] #2 Opisać ryzyko związane z małą liczbą próbek
+- [ ] [X] #3 "The data were collected between 2007 and 2012, but potential batch effects across different harvest years are not discussed"
+- [ ] [X] #3 Opisać dlaczego wybrano akurat te odmiany (czy mają znaczenie ekonomiczne lub są różne morfologicznie)
 - [ ] [ ] #4 Dopisać jaka cecha została usunięta i w jaki sposób została wybrana. (mało istotna statystycznie i było ich mniej 350vs450 próbek)
-- [ ] [ ] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
+- [ ] [X] #4 Wyjaśnić, czy obserwacje i pomiary pochodzą z tych samych drzew, zbiorów czy lat, oraz wziąć pod uwagę potencjalne zależności między nimi podczas dzielenia danych na zbiory treningowe i testowe .
 - [ ] [ ] #4 *The multiclass classification mechanism is not sufficiently explained. Cornus is a five-class problem and Iris is a three-class problem, yet the mapping between quantum measurement outputs and class labels is not described. The keyword "binary classification" is also inconsistent with the reported experiments.*?
 - [ ] [ ] #4 Doprecyzować opis "fully quantum" - zarzut, że to klasyk - optymalizacja na klasyku i wstępne przetwarzanie (usunąć fully quantum, ja bym dopisał, że ostateczną decyzje podejmują kwanty)
