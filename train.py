@@ -2,7 +2,7 @@ import itertools
 import os
 from datetime import datetime
 from typing import Dict, List, Optional, Union
-
+import time
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -22,7 +22,7 @@ from src.utils import load_dataset
 def train(
     dataset_name: str = "iris",
     target_classes: list = ["0", "1"],
-    target_features: list =  [0, 2, 3], # [1, 3, 4],
+    target_features: list =  [0, 2, 3], # [1, 2, 3, 4],
     feature_map_type: str = "zzfeaturemap",
     ansatz_type: str = "realamplitudes",
     reps: int = 2,
@@ -63,6 +63,7 @@ def train(
     )
 
     # 4. Optymalizacja na wskazanym backendzie kwantowym
+    start_time = time.time()
     final_w, best_w, history = optimize_circuit(
         full_circuit=full_qc,
         feature_map=fmap,
@@ -80,7 +81,7 @@ def train(
         backend_mode=backend_mode,
         verbose=verbose,
     )
-
+    training_time = time.time() - start_time
     # 5. Ewaluacja walidacyjna
     val_probs = predict_circuit(
         full_qc,
@@ -119,6 +120,7 @@ def train(
         "ansatz": ansatz_type,
         "layers": reps,
         "seed": seed,
+        "training_time_sec": training_time,
         "val_loss": final_val_loss,
         "val_acc": final_val_acc,
         "weights_path": weights_path,
@@ -153,6 +155,11 @@ def benchmark(
         " eksperymentów...\n"
     )
 
+    csv_path = os.path.join(out_dir, "benchmark_backends_results.csv")
+
+    # Usuwamy poprzedni plik wyników (jeśli istnieje), aby nie mieszać starych danych
+    if os.path.exists(csv_path):
+        os.remove(csv_path)
     run_idx = 1
     for ds, b_type, ans, l, opt, sd in itertools.product(
         datasets, backend_types, ansatze, layers_list, optimizers, seeds
@@ -175,28 +182,34 @@ def benchmark(
             batch_size=batch_size,
         )
         results.append(res)
-
+        # Zapis pojedynczego wyniku na bieżąco do pliku CSV
+        pd.DataFrame([res]).to_csv(
+            csv_path,
+            mode="a",
+            header=not os.path.exists(csv_path),
+            index=False,
+        )
         print(
             f"   Finished [{run_idx}/{total_runs}]: Val Loss ="
             f" {res['val_loss']:.4f} | Val Acc = {res['val_acc'] * 100:.2f}%\n"
         )
         run_idx += 1
 
-    df = pd.DataFrame(results)
-    csv_path = os.path.join(out_dir, "benchmark_backends_results.csv")
-    df.to_csv(csv_path, index=False)
+    # df = pd.DataFrame(results)
+    # csv_path = os.path.join(out_dir, "benchmark_backends_results.csv")
+    # df.to_csv(csv_path, index=False)
     print(f"✅ BENCHMARK ZAKOŃCZONY! Raport zapisano w: {csv_path}\n")
-    return df
+    return pd.DataFrame(results)
 
 
 if __name__ == "__main__":
     df_report = benchmark(
         datasets=["iris", "cornus4f"],
-        backend_types=["FakeOdra", "FakeGarnet"],
-        ansatze=["efficientsu2"],
-        layers_list=[10],
+        backend_types=["FakeOdra"],
+        ansatze=["realamplitudes"],
+        layers_list=[10,15,20],
         optimizers=["adam"],
-        seeds=[42, 123],
-        max_iters=200,
+        seeds=[42, 89, 123, 456, 768],
+        max_iters=250,
         batch_size=8,
     )

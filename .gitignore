@@ -4,3 +4,4 @@ IQM_TOKEN.env
 test.py
 src/__pycache__/
 out/
+out_pre/
