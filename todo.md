@@ -64,7 +64,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 - [ ] [ ] #2 #4 Rozbudować sekcję wyników: dodać macierze pomyłek, metryki oraz przedziały ufności/odchylenia na wykresach.
 - [ ] [ ] #4 Przeorganizować strukturę artykułu, opisać topologię sprzętu, czasy wykonania, poprawić błędy językowe i usunąć niepotrzebne dygresje (np. wątek o żelkach).
 - [ ] [ ] #2 Wytłumaczyć anomalię z 25 warstwami dla irysów i 4 cechami dlaczego spada poniżej 50% (jest to za mało opisane)
-- [ ] [ ] #3 Bardziej konkretnie opisać future works.
+- [ ] [X] #3 Bardziej konkretnie opisać future works.
 - [ ] [ ] #4 Wniosek, że zwiększanie głębokości obwodów zmniejsza dokładność głównie z powodu szumu kwantowego, jest niewystarczająco udowodniony. Porównanie symulacji bezszumowej, symulacji z szumem i rzeczywistego sprzętu, wraz z analizami głębokości obwodów i liczby bramek, lepiej to uzasadni.
 - [ ] [ ]#4 Tabela 2 i dyskusja opisują selektywne powtórzenia i podają wynik sprzętowy 65,5%, który nie jest jasno przedstawiony w tabeli. Poprawić spójność i przejrzystość
 
@@ -80,7 +80,7 @@ The plant material (Cornus mas L. cultivars) used to generate the dataset was so
 
 **Prośba o dodatkowe informacje**
 - [ ] [X] #4 Wyraźniej uzasadnić znaczenie pracy w kontekście ekologii, rolnictwa i bioróżnorodności - praca wygląda głównie jak benchmark QML – należy dobitniej pokazać, dlaczego klasyfikacja tych konkretnych roślin jest ważna i potrzebna z praktycznego punktu widzenia.
-- [ ] [ ] #4 Przejrzeć i poprawić *"ethic statement"*
+- [ ] [X] #4 Przejrzeć i poprawić *"ethic statement"*
 - [ ] [X] #4 Uzasadnić czemu masy nie zostały uwzględnione (poza wzmianką o różnych porach zbioru)]
 - [ ] [X] #1 4 Dodać dlaczego wprowadzenie naszego zbioru jest wartościowe (poza nakładaniem się klas)
 - [ ] [X] #2 Opisać ryzyko związane z małą liczbą próbek
